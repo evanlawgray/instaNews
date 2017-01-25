@@ -54,7 +54,7 @@ body {
 
 .dashboard {
 	height: 50%;
-	width: 80%;
+	width: 100vw;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
@@ -63,7 +63,7 @@ body {
 }
 
 .times-logo-wrapper {
-	width: 250px;
+	min-width: 250px;
 
 }
 
@@ -95,6 +95,34 @@ footer {
 
 footer p {
 	height: 10vh;
-	margin: 0 auto;
 	color: #C2C2C2;
+}
+
+@media all and (min-width: 600px){
+
+	body {
+		font-size: 1.2rem;
+	}
+
+	.content{
+		flex-direction: row;
+    	justify-content: flex-start;
+	}
+
+	.dashboard {
+		width: 32vw;
+	}
+
+	.dashboard {
+	
+	}
+
+	footer {
+		justify-content: flex-start;
+		margin-left: 2%;
+	}
+
+	footer p {
+		font-size: 1rem;
+	}
 }
