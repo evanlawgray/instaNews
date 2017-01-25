@@ -1,10 +1,17 @@
 $(function(){
 
-	//This is my message....
+	var $target = $('#target');
+	var $contentContainer = $('.content');
+	var $dashboard = $('.dashboard');
 
-	var message = 'Hello world!';
-
-	$( '#target' ).change(function() {
-	//alert( 'Handler for .change() called.' );
+	$target.change(function() {
+		$dashboard.animate({
+			position: 'absolute',
+			height: '20vh',
+			top: 0,
+			left: 0
+		}, 1000, 'linear', function(){
+			return false;
+		});
 	});
 });

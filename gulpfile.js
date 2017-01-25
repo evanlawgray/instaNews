@@ -15,7 +15,7 @@ var plumberErrorHandler = {
 
 gulp.task('scripts', ['lint'], function() {
 	gulp.src('./scripts/*.js')
-		.pipe(plumber(plumberErrorHandler))
+		//.pipe(plumber(plumberErrorHandler))
 		.pipe(uglify())
 		.pipe(rename({extname: '.min.js' }))
 		.pipe(gulp.dest('./build/js'))
@@ -23,7 +23,7 @@ gulp.task('scripts', ['lint'], function() {
 
 gulp.task('lint', function(){
 	return gulp.src(['scripts/*.js'])
-		.pipe(plumber(plumberErrorHandler))
+		//.pipe(plumber(plumberErrorHandler))
 		.pipe(eslint())
 		.pipe(eslint.format())
 		.pipe(eslint.failAfterError());
@@ -43,7 +43,7 @@ gulp.task('browserSync', function(){
 
 
 gulp.task('watch', function() {
-   gulp.watch('scripts/*.js', ['scripts']);
+   gulp.watch('./scripts/*.js', ['scripts']);
 });
 
 gulp.task('default', ['watch', 'browserSync', 'lint']);
