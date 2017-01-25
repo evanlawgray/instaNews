@@ -58,8 +58,14 @@ body {
 	align-content: center;
 }
 
+.times-logo-container {
+	width: 300px;
+	text-align: center;
+}
+
 .times-logo {
-	width: 275px;
+	height: auto;
+	max-width: 100%;
 }
 
 .dashboard form {
@@ -88,15 +94,10 @@ footer p {
 	color: #C2C2C2;
 }
 
-@media all and (min-width: 600px){
+@media all and (min-width: 1000px){
 
 	body {
 		font-size: 1.2rem;
-	}
-
-	.content{
-		flex-direction: row;
-    	justify-content: flex-start;
 	}
 
 	.dashboard {
