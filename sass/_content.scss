@@ -26,6 +26,12 @@
 			flex-flow: column nowrap;
 			align-items: center;
 			text-align: center;
+			label {
+				select {
+					display: block;
+					margin: 1rem;
+				}
+			}
 		}
 	}
 }

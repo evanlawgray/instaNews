@@ -109,10 +109,9 @@ html {
       -ms-flex-align: center;
           align-items: center;
       text-align: center; }
-
-select {
-  display: block;
-  margin: 1rem; }
+      .content .dashboard form label select {
+        display: block;
+        margin: 1rem; }
 
 footer {
   padding-top: 1rem;
