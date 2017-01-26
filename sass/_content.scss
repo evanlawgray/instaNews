@@ -3,9 +3,10 @@
 	.dashboard {
 		height: 100%;
 		width: 100%;
+		margin: 0;
 		position: relative;
 		display: flex;
-		flex-flow: column nowrap;
+		flex-flow: column wrap;
 		justify-content: center;
 		align-items: center;
 		align-content: center;

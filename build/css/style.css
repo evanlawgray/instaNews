@@ -79,11 +79,12 @@ html {
   .content .dashboard {
     height: 100%;
     width: 100%;
+    margin: 0;
     position: relative;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-flow: column nowrap;
-        flex-flow: column nowrap;
+    -ms-flex-flow: column wrap;
+        flex-flow: column wrap;
     -ms-flex-pack: center;
         justify-content: center;
     -ms-flex-align: center;
