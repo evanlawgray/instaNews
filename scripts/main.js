@@ -32,5 +32,11 @@ $(function(){
 		requestStories();
 		console.log(response);
 
-		});
+		for (var i=0; i<=12; i++) {
+			/*var thisStory = response.results[i];*/
+			$.each(response.results[i], function(){
+				
+			});
+		}
+	});
 });
