@@ -82,14 +82,18 @@ html {
     position: relative;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-flow: row wrap;
-        flex-flow: row wrap;
+    -ms-flex-flow: column nowrap;
+        flex-flow: column nowrap;
     -ms-flex-pack: center;
         justify-content: center;
     -ms-flex-align: center;
         align-items: center;
     -ms-flex-line-pack: center;
         align-content: center; }
+    @media all and (min-width: 600px) {
+      .content .dashboard {
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap; } }
     @media all and (min-width: 1000px) {
       .content .dashboard {
         -ms-flex-pack: start;
@@ -112,6 +116,12 @@ html {
       .content .dashboard form label select {
         display: block;
         margin: 1rem; }
+  .content .stories-grid {
+    height: 0px;
+    display: none; }
+    .content .stories-grid .story {
+      height: 33.33%;
+      width: 25%; }
 
 footer {
   padding-top: 1rem;

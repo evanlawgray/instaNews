@@ -5,11 +5,14 @@
 		width: 100%;
 		position: relative;
 		display: flex;
-		flex-flow: row wrap;
+		flex-flow: column nowrap;
 		justify-content: center;
 		align-items: center;
 		align-content: center;
-		@include media(1000px) {
+		@include media ($tablet-width){
+			flex-flow: row nowrap;
+		}
+		@include media($desktop-width) {
 			justify-content: flex-start;
 		}
 		.times-logo-container {
@@ -32,6 +35,14 @@
 					margin: 1rem;
 				}
 			}
+		}
+	}
+	.stories-grid {
+		height: 0px;
+		display: none;
+		.story {
+			height: 33.33%;
+			width: 25%;
 		}
 	}
 }
