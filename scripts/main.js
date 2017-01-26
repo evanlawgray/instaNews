@@ -26,11 +26,11 @@ $(function(){
 				url: url += $selectedTopic + '.json' + '?' + $.param({'api-key': '4bd2bd098b3449068be47890b4f42e24',}),
 				method: 'GET' 
 			}).done(function(data){
-				response = data;
+				response = $.extend(true, response, data);
 			});
 		};
 		requestStories();
-		console.log(url);
+		console.log(response);
 
 		});
 });
