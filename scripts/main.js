@@ -27,14 +27,35 @@ $(function(){
 				method: 'GET' 
 			}).done(function(data){
 				response = $.extend(true, response, data);
-				for (var i=0; i<=11; i++) {
+				$.each(response.results, function(i, val){
+					var thisStory = val;
+					/*var abstract = thisStory.abstract;
+					var articleURL = thisStory.url;
+					var imgURL = thisStory.multimedia[0].url;*/
+
+					if (thisStory.multimedia.length != 0) {
+						var abstract = thisStory.abstract;
+						var articleURL = thisStory.url;
+						var imgURL = thisStory.multimedia[0].url;
+					
+						var storiesGridItem = '<li> <a class="story-image-link>"';
+						storiesGridItem += '<img class="story-image" src="' + imgURL + '"/> </a>';
+						storiesGridItem += '<p class="story-abstract">' + abstract + '</p></li>';
+						console.log(storiesGridItem);
+					}
+
+					else {
+						console.log(thisStory.multimedia);
+					}
+				});
+				/*for (var i=0; i<=11; i++) {
 					var thisStory = response.results[i];
 					var abstract = thisStory.abstract;
 					var articleURL = thisStory.url;
 					var imgURL = thisStory.multimedia[0].url;
 					console.log(imgURL);
 
-				}	
+				}	*/
 			});
 		};
 		requestStories();
