@@ -1,0 +1,17 @@
+footer {
+	padding-top: 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+		@include media(1000px) {
+			justify-content: flex-start;
+			margin-left: 2%;
+		}
+		p {
+			height: 10vh;
+			color: #C2C2C2;
+				@include media(1000px) {
+				font-size: 1rem;
+				}
+		}
+}

@@ -126,10 +126,9 @@ footer {
       -ms-flex-pack: start;
           justify-content: flex-start;
       margin-left: 2%; } }
-
-footer p {
-  height: 10vh;
-  color: #C2C2C2; }
-  @media all and (min-width: 1000px) {
-    footer p {
-      font-size: 1rem; } }
+  footer p {
+    height: 10vh;
+    color: #C2C2C2; }
+    @media all and (min-width: 1000px) {
+      footer p {
+        font-size: 1rem; } }
