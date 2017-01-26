@@ -17,26 +17,29 @@ $(function(){
 		$storiesGrid.empty().animate({height: '75vh', display: 'block'});
 
 //Build the url for the AJAX request
-		var url = "https://api.nytimes.com/svc/topstories/v2/";
+		var apiLink = "https://api.nytimes.com/svc/topstories/v2/";
 		var storiesArray = [];
 		var response = {};
 
 		var requestStories = function (i){
 			$.ajax({
-				url: url += $selectedTopic + '.json' + '?' + $.param({'api-key': '4bd2bd098b3449068be47890b4f42e24',}),
+				url: apiLink += $selectedTopic + '.json' + '?' + $.param({'api-key': '4bd2bd098b3449068be47890b4f42e24',}),
 				method: 'GET' 
 			}).done(function(data){
 				response = $.extend(true, response, data);
+				for (var i=0; i<=11; i++) {
+					var thisStory = response.results[i];
+					var abstract = thisStory.abstract;
+					var articleURL = thisStory.url;
+					var imgURL = thisStory.multimedia[0].url;
+					console.log(imgURL);
+
+				}	
 			});
 		};
 		requestStories();
-		console.log(response);
+		/*console.log(response);*/
 
-		for (var i=0; i<=12; i++) {
-			/*var thisStory = response.results[i];*/
-			$.each(response.results[i], function(){
-				
-			});
-		}
+
 	});
 });
