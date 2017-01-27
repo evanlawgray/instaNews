@@ -20,29 +20,28 @@ $(function(){
 		var apiLink = "https://api.nytimes.com/svc/topstories/v2/";
 		var storiesArray = [];
 		var response = {};
-
+		
 		$.ajax({
 			url: apiLink += $selectedTopic + '.json' + '?' + $.param({'api-key': '4bd2bd098b3449068be47890b4f42e24'}),
 			method: 'GET' 
 		}).done(function(data){
 			var storiesGridItem = '';
+			var storiesFetched = 0;
 			console.log(data);
 
 			$.each(data.results, function(i, val){
 
-				if (i <= 11 && val.multimedia.length !== 0) {
+				if (storiesFetched < 12 && val.multimedia.length !== 0) {
 			
 					storiesGridItem = '<li class="story"> <a href="' + val.url + '"class="story-image-link">';
 					storiesGridItem += '<img class="story-image" src="' + val.multimedia[0].url + '"/> </a>';
 					storiesGridItem += '<p class="story-abstract">' + val.abstract + '</p></li>';
 					$storiesGrid.append(storiesGridItem);
+					storiesFetched++;
 	
 					console.log(val);
 				}
 
-				else {
-					return false;
-				}
 			});
 		}); 
 
