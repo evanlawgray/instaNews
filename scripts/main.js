@@ -18,7 +18,7 @@ $(function(){
 		$logoContainer.animate({width: '20vh'}, 100, 'linear');
 		/*$dashboard.animate({position: 'absolute', height: 'auto','max-width': '700px', top: 0,left: 0}, 200, 'linear');*/
 		//$logo.animate({width:'25%', height: '25%'}, 200, 'linear');
-		$storiesGrid.empty().animate({height: '75vh'});
+		$storiesGrid.empty().animate({height: '75%'});
 
 		var apiLink = "https://api.nytimes.com/svc/topstories/v2/";
 		
@@ -33,12 +33,15 @@ $(function(){
 
 
 				if (storiesFetched < 12 && val.multimedia.length !== 0) {
+					storiesGridItem = '';
 			
-					storiesGridItem = '<li class="story"> <a href="' + val.url + '"class="story-image-link">';
-					storiesGridItem += '<img class="story-image" src="' + val.multimedia[4].url + '"/> </a>';
-					storiesGridItem += '<p class="story-abstract">' + val.abstract + '</p></li>';
+					/*storiesGridItem += ' <a href="' + val.url + '"class="story-image-link" style=\'background-image: url\' ("' + val.multimedia[4].url + '");"> ';*/
+					storiesGridItem += ' <li class="story" style="background-image: url(\'' + val.multimedia[4].url + '\');"> ';
+			/*		storiesGridItem += '<img class="story-image" src="' + val.multimedia[4].url + '">';*/
+					storiesGridItem += ' <p class="story-abstract"> ' + val.abstract + ' </p> ' + ' </li>  ';
 					$storiesGrid.append(storiesGridItem);
 					storiesFetched++;
+					console.log(storiesGridItem);
 
 				}
 
