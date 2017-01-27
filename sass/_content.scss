@@ -6,7 +6,7 @@
 		margin: 0;
 		position: relative;
 		display: flex;
-		flex-flow: column wrap;
+		flex-flow: column nowrap;
 		justify-content: center;
 		align-items: center;
 		align-content: center;
@@ -43,8 +43,19 @@
 		display: flex;
 		flex-flow: row wrap;
 		.story {
-			height: 33.333%;
-			width: 25%;
+		/* 	height: 100%; */
+			list-style-type: none;
+			width: 100%;
+			@include media (500px) {
+				width: 50%;
+			}
+			@include media ($desktop-width) {
+				width: 25%;
+			}
+			& img {
+				width: 100%;
+				height: auto;
+			}
 		}
 	}
 }

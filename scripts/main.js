@@ -28,9 +28,9 @@ $(function(){
 		}).done(function(data){
 			var storiesGridItem = '';
 			var storiesFetched = 0;
-			console.log(data);
 
 			$.each(data.results, function(i, val){
+				
 
 				if (storiesFetched < 12 && val.multimedia.length !== 0) {
 			
