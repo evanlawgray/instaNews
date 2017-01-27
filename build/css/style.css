@@ -143,10 +143,8 @@ html {
       @media all and (min-width: 1000px) {
         .content .stories-grid .story {
           width: 25%; } }
-      .content .stories-grid .story img {
-        width: 100%;
-        height: auto; }
-      .content .stories-grid .story p {
+      .content .stories-grid .story .story-abstract {
+        background-color: rgba(0, 0, 0, 0.5);
         padding: 0.5rem;
         line-height: 1.5rem; }
 
