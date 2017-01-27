@@ -40,9 +40,10 @@
 	}
 	.stories-grid {
 		height: 0px;
-		display: none;
+		display: flex;
+		flex-flow: row wrap;
 		.story {
-			height: 33.33%;
+			height: 33.333%;
 			width: 25%;
 		}
 	}

@@ -5,62 +5,46 @@ $(function(){
 	var $dashboard = $('.dashboard');
 	var $logoContainer = $('.times-logo-container');
 	var $logo = $( '.times-logo' );
+	var $selectedTopic = '';
 
 	$target.change(function() {
-		var $selectedTopic = $( 'select option:selected' ).val();
+		$selectedTopic = $( 'select option:selected' ).val();
 
 //Shrink dashboard and move it to top of page
 
 		$logoContainer.animate({height: '25vh'}, 200, 'linear');
 		$dashboard.animate({position: 'absolute', height: 'auto','max-width': '700px', top: 0,left: 0}, 200, 'linear');
 		//$logo.animate({width:'25%', height: '25%'}, 200, 'linear');
-		$storiesGrid.empty().animate({height: '75vh', display: 'block'});
+		$storiesGrid.empty().animate({height: '75vh'});
 
-//Build the url for the AJAX request
 		var apiLink = "https://api.nytimes.com/svc/topstories/v2/";
 		var storiesArray = [];
 		var response = {};
 
-		var requestStories = function (i){
-			$.ajax({
-				url: apiLink += $selectedTopic + '.json' + '?' + $.param({'api-key': '4bd2bd098b3449068be47890b4f42e24',}),
-				method: 'GET' 
-			}).done(function(data){
-				response = $.extend(true, response, data);
-				$.each(response.results, function(i, val){
-					var thisStory = val;
-					/*var abstract = thisStory.abstract;
-					var articleURL = thisStory.url;
-					var imgURL = thisStory.multimedia[0].url;*/
+		$.ajax({
+			url: apiLink += $selectedTopic + '.json' + '?' + $.param({'api-key': '4bd2bd098b3449068be47890b4f42e24'}),
+			method: 'GET' 
+		}).done(function(data){
+			var storiesGridItem = '';
+			console.log(data);
 
-					if (thisStory.multimedia.length != 0) {
-						var abstract = thisStory.abstract;
-						var articleURL = thisStory.url;
-						var imgURL = thisStory.multimedia[0].url;
-					
-						var storiesGridItem = '<li> <a class="story-image-link>"';
-						storiesGridItem += '<img class="story-image" src="' + imgURL + '"/> </a>';
-						storiesGridItem += '<p class="story-abstract">' + abstract + '</p></li>';
-						console.log(storiesGridItem);
-					}
+			$.each(data.results, function(i, val){
 
-					else {
-						console.log(thisStory.multimedia);
-					}
-				});
-				/*for (var i=0; i<=11; i++) {
-					var thisStory = response.results[i];
-					var abstract = thisStory.abstract;
-					var articleURL = thisStory.url;
-					var imgURL = thisStory.multimedia[0].url;
-					console.log(imgURL);
+				if (i <= 11 && val.multimedia.length !== 0) {
+			
+					storiesGridItem = '<li class="story"> <a href="' + val.url + '"class="story-image-link">';
+					storiesGridItem += '<img class="story-image" src="' + val.multimedia[0].url + '"/> </a>';
+					storiesGridItem += '<p class="story-abstract">' + val.abstract + '</p></li>';
+					$storiesGrid.append(storiesGridItem);
+	
+					console.log(val);
+				}
 
-				}	*/
+				else {
+					return false;
+				}
 			});
-		};
-		requestStories();
-		/*console.log(response);*/
-
+		}); 
 
 	});
 });

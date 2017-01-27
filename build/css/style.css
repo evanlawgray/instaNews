@@ -119,9 +119,12 @@ html {
         margin: 1rem; }
   .content .stories-grid {
     height: 0px;
-    display: none; }
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap; }
     .content .stories-grid .story {
-      height: 33.33%;
+      height: 33.333%;
       width: 25%; }
 
 footer {
