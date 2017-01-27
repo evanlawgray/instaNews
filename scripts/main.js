@@ -30,17 +30,16 @@ $(function(){
 			var storiesFetched = 0;
 
 			$.each(data.results, function(i, val){
-				
+
 
 				if (storiesFetched < 12 && val.multimedia.length !== 0) {
 			
 					storiesGridItem = '<li class="story"> <a href="' + val.url + '"class="story-image-link">';
-					storiesGridItem += '<img class="story-image" src="' + val.multimedia[0].url + '"/> </a>';
+					storiesGridItem += '<img class="story-image" src="' + val.multimedia[4].url + '"/> </a>';
 					storiesGridItem += '<p class="story-abstract">' + val.abstract + '</p></li>';
 					$storiesGrid.append(storiesGridItem);
 					storiesFetched++;
-	
-					console.log(val);
+
 				}
 
 			});
