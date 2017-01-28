@@ -51,7 +51,7 @@ table {
   font-family: 'Open Sans';
   src: url("opensans-light-webfont.eot");
   src: url("opensans-light-webfont.eot?#iefix") format("embedded-opentype"), url("opensans-light-webfont.woff2") format("woff2"), url("opensans-light-webfont.ttf") format("truetype"), url("opensans-light-webfont.svg#open_sanslight") format("svg");
-  font-weight: 100;
+  font-weight: lighter;
   font-style: normal; }
 
 @font-face {
@@ -145,6 +145,7 @@ html {
       width: 100%;
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       list-style-type: none;
       display: -ms-flexbox;
       display: flex;
@@ -154,18 +155,17 @@ html {
           justify-content: flex-end;
       -ms-flex-align: center;
           align-items: center; }
-      @media all and (min-width: 500px) {
+      @media all and (min-width: 600px) {
         .content .stories-grid .story {
           width: 50%; } }
       @media all and (min-width: 1000px) {
         .content .stories-grid .story {
           width: 25%; } }
-      .content .stories-grid .story a {
-        text-transform: none; }
       .content .stories-grid .story .story-image-link {
         height: 100%;
         width: 100%;
-        text-transform: none;
+        color: #FFFFFF;
+        text-decoration: none;
         display: -ms-flexbox;
         display: flex;
         -ms-flex-flow: column nowrap;
@@ -173,9 +173,10 @@ html {
         -ms-flex-pack: end;
             justify-content: flex-end; }
         .content .stories-grid .story .story-image-link .story-abstract {
-          text-transform: none;
-          background-color: rgba(0, 0, 0, 0.5);
-          padding: 0.5rem;
+          font-size: 1rem;
+          font-weight: 100;
+          background-color: rgba(0, 0, 0, 0.65);
+          padding: 0.7rem;
           line-height: 1.5rem; }
 
 footer {

@@ -51,31 +51,31 @@
 		 	width: 100%;
 		 	background-size: cover;
 		 	background-position: center;
+		 	background-repeat: no-repeat;
 			list-style-type: none;
 			display: flex;
 			flex-flow: column nowrap;
 			justify-content: flex-end;
 			align-items: center;
-			@include media (500px) {
+			@include media ($tablet-width) {
 				width: 50%;
 			}
 			@include media ($desktop-width) {
 				width: 25%;
 			}
-			& a {
-				text-transform: none;
-			}
 			.story-image-link {
 				height: 100%;
 				width: 100%;
-				text-transform: none;
+				color: #FFFFFF;
+				text-decoration: none;
 				display: flex;
     			flex-flow: column nowrap;
     			justify-content: flex-end;
 				.story-abstract {
-					text-transform: none;
-					background-color: rgba(0, 0, 0, 0.5);
-					padding: 0.5rem;
+					font-size: 1rem;
+					font-weight: 100;
+					background-color: rgba(0, 0, 0, 0.65);
+					padding: 0.7rem;
 					line-height: 1.5rem;
 				}
 			}

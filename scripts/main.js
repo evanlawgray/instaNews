@@ -34,10 +34,10 @@ $(function(){
 
 				if (storiesFetched < 12 && val.multimedia.length !== 0) {
 					storiesGridItem = '';
-			
+
 					storiesGridItem += ' <li class="story" style="background-image: url(\'' + val.multimedia[4].url + '\');"> ';
 					storiesGridItem += ' <a href="' + val.url + '"class="story-image-link" > ';
-					storiesGridItem += ' <p class="story-abstract"> ' + val.abstract + ' </p> ' + ' </li> </a>';
+					storiesGridItem += ' <p class="story-abstract"> ' + val.abstract + ' </p> </a> ' + ' </li> ';
 					$storiesGrid.append(storiesGridItem);
 					storiesFetched++;
 
