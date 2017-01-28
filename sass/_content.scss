@@ -1,10 +1,14 @@
 .content {
 	height: 100%;
+	display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+	flex: 1;
 	.dashboard {
 		height: 100%;
 		width: 100%;
 		margin: 0;
-		position: relative;
+		/* position: relative; */
 		display: flex;
 		flex-flow: column nowrap;
 		justify-content: center;
@@ -39,7 +43,7 @@
 		}
 	}
 	.stories-grid {
-		height: 0px;
+		height: auto;
 		display: flex;
 		flex-flow: row wrap;
 		.story {
@@ -58,10 +62,21 @@
 			@include media ($desktop-width) {
 				width: 25%;
 			}
-			.story-abstract {
-				background-color: rgba(0, 0, 0, 0.5);
-				padding: 0.5rem;
-				line-height: 1.5rem;
+			& a {
+				text-transform: none;
+			}
+			.story-image-link {
+				height: 100%;
+				width: 100%;
+				text-transform: none;
+				display: flex;
+    			flex-flow: column nowrap;
+    			justify-content: flex-end;
+				.story-abstract {
+					background-color: rgba(0, 0, 0, 0.5);
+					padding: 0.5rem;
+					line-height: 1.5rem;
+				}
 			}
 		}
 	}

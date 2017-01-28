@@ -35,13 +35,11 @@ $(function(){
 				if (storiesFetched < 12 && val.multimedia.length !== 0) {
 					storiesGridItem = '';
 			
-					/*storiesGridItem += ' <a href="' + val.url + '"class="story-image-link" style=\'background-image: url\' ("' + val.multimedia[4].url + '");"> ';*/
 					storiesGridItem += ' <li class="story" style="background-image: url(\'' + val.multimedia[4].url + '\');"> ';
-			/*		storiesGridItem += '<img class="story-image" src="' + val.multimedia[4].url + '">';*/
-					storiesGridItem += ' <p class="story-abstract"> ' + val.abstract + ' </p> ' + ' </li>  ';
+					storiesGridItem += ' <a href="' + val.url + '"class="story-image-link" > ';
+					storiesGridItem += ' <p class="story-abstract"> ' + val.abstract + ' </p> ' + ' </li> </a> ';
 					$storiesGrid.append(storiesGridItem);
 					storiesFetched++;
-					console.log(storiesGridItem);
 
 				}
 

@@ -1,5 +1,6 @@
 footer {
-	padding-top: 1rem;
+	height: 80px;
+	padding-top: 2rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -8,7 +9,7 @@ footer {
 			margin-left: 2%;
 		}
 		p {
-			height: 10vh;
+			height: 100%;
 			color: #C2C2C2;
 				@include media(1000px) {
 				font-size: 1rem;
