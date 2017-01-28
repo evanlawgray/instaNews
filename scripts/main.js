@@ -28,9 +28,9 @@ $(function(){
 		}).done(function(data){
 			var storiesGridItem = '';
 			var storiesFetched = 0;
+			var response = $.parseJSON(data);
 
 			$.each(data.results, function(i, val){
-
 
 				if (storiesFetched < 12 && val.multimedia.length !== 0) {
 					storiesGridItem = '';
@@ -40,13 +40,13 @@ $(function(){
 					storiesGridItem += ' <p class="story-abstract"> ' + val.abstract + ' </p> </a> ' + ' </li> ';
 					$storiesGrid.append(storiesGridItem);
 					storiesFetched++;
-
 				}
-
 			});
 		}).fail(function(){
 			$storiesGrid.animate({width: '50vw', height: '25vh'});
 			$storiesGrid.append('<div class="error-message"><p>Something went wrong. Please try again later</p></div>');
+		}).always(function(){
+			$storiesGrid.append('<img class="loading-gif" src="./images/ajax-loader.gif" alt="loading"/>');
 		});
 
 	});
