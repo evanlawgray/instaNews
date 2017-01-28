@@ -8,7 +8,7 @@
 		height: 100%;
 		width: 100%;
 		margin: 0;
-		/* position: relative; */
+		position: relative;
 		display: flex;
 		flex-flow: column nowrap;
 		justify-content: center;
@@ -18,7 +18,7 @@
 			flex-flow: row nowrap;
 		}
 		@include media($desktop-width) {
-			justify-content: flex-start;
+			/* justify-content: flex-start; */
 		}
 		.times-logo-container {
 			width: 300px;
@@ -46,6 +46,23 @@
 		height: auto;
 		display: flex;
 		flex-flow: row wrap;
+		.error-message {
+			height: 100%;
+			width: 100%;
+			border: 2px outset white;
+			color: #FFFFFF;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			& p {
+				text-align: center;
+    			max-width: 320px;
+    			font-size: 1.7rem;
+    			font-style: italic;
+   				line-height: 3rem;
+			}
+		}
 		.story {
 		 	height: 420px;
 		 	width: 100%;

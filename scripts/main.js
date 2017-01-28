@@ -18,9 +18,9 @@ $(function(){
 		$logoContainer.animate({width: '20vh'}, 100, 'linear');
 		/*$dashboard.animate({position: 'absolute', height: 'auto','max-width': '700px', top: 0,left: 0}, 200, 'linear');*/
 		//$logo.animate({width:'25%', height: '25%'}, 200, 'linear');
-		$storiesGrid.empty().animate({height: '75%'});
+		$storiesGrid.empty()/*.animate({height: '75%'})*/;
 
-		var apiLink = "https://api.nytimes.com/svc/topstories/v2/";
+		var apiLink = "https://aptimes.com/svc/topstories/v2/";
 		
 		$.ajax({
 			url: apiLink += $selectedTopic + '.json' + '?' + $.param({'api-key': '4bd2bd098b3449068be47890b4f42e24'}),
@@ -44,7 +44,10 @@ $(function(){
 				}
 
 			});
-		}); 
+		}).fail(function(){
+			$storiesGrid.animate({width: '50vw', height: '25vh'});
+			$storiesGrid.append('<div class="error-message"><p>Something went wrong. Please try again later</p></div>');
+		});
 
 	});
 });
