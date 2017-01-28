@@ -173,6 +173,7 @@ html {
         -ms-flex-pack: end;
             justify-content: flex-end; }
         .content .stories-grid .story .story-image-link .story-abstract {
+          text-transform: none;
           background-color: rgba(0, 0, 0, 0.5);
           padding: 0.5rem;
           line-height: 1.5rem; }
@@ -193,7 +194,8 @@ footer {
       margin-left: 2%; } }
   footer p {
     height: 100%;
-    color: #C2C2C2; }
+    color: #C2C2C2;
+    font-size: 14px; }
     @media all and (min-width: 1000px) {
       footer p {
         font-size: 1rem; } }

@@ -37,7 +37,7 @@ $(function(){
 			
 					storiesGridItem += ' <li class="story" style="background-image: url(\'' + val.multimedia[4].url + '\');"> ';
 					storiesGridItem += ' <a href="' + val.url + '"class="story-image-link" > ';
-					storiesGridItem += ' <p class="story-abstract"> ' + val.abstract + ' </p> ' + ' </li> </a> ';
+					storiesGridItem += ' <p class="story-abstract"> ' + val.abstract + ' </p> ' + ' </li> </a>';
 					$storiesGrid.append(storiesGridItem);
 					storiesFetched++;
 
