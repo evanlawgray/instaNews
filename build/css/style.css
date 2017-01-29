@@ -122,7 +122,8 @@ html {
     -ms-flex-align: center;
         align-items: center;
     -ms-flex-line-pack: center;
-        align-content: center; }
+        align-content: center;
+    transition: all 0.1s linear; }
     @media all and (min-width: 600px) {
       .content .dashboard {
         -ms-flex-flow: row nowrap;
@@ -134,7 +135,8 @@ html {
         padding: 1rem 1rem; } }
     .content .dashboard .times-logo-container {
       width: 300px;
-      text-align: center; }
+      text-align: center;
+      transition: all 0.1s linear; }
       @media all and (min-width: 600px) {
         .content .dashboard .times-logo-container {
           margin-right: 3rem; } }

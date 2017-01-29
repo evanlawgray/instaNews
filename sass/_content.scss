@@ -33,6 +33,7 @@
 		justify-content: center;
 		align-items: center;
 		align-content: center;
+		transition: all 0.1s linear;
 		@include media ($tablet-width){
 			flex-flow: row nowrap;
 			justify-content: flex-start;
@@ -43,6 +44,7 @@
 		.times-logo-container {
 			width: 300px;
 			text-align: center;
+			transition: all 0.1s linear;
 			@include media($tablet-width) {
 				margin-right: 3rem;
 			}

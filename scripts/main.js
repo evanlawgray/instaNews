@@ -14,6 +14,7 @@ $(function(){
 //Shrink dashboard and move it to top of page (and append loading spinner gif)
 
 		$dashboard.addClass('dash-to-top');
+		$logoContainer.addClass('resize-logo');
 		$storiesGrid.empty().append('<img class="loading-gif" src="./images/ajax-loader.gif" alt="loading"/>');
 
 //Make ajax request to get stories
@@ -25,7 +26,6 @@ $(function(){
 			var storiesGridItem = '';
 			var storiesFetched = 0;
 
-			$logoContainer.addClass('resize-logo');
 			$storiesGrid.empty();
 
 //Loop over stories array ('results') and append first 12 stories which have associated images
