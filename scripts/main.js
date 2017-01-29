@@ -19,6 +19,7 @@ $(function(){
 		/*$dashboard.animate({position: 'absolute', height: 'auto','max-width': '700px', top: 0,left: 0}, 200, 'linear');*/
 		//$logo.animate({width:'25%', height: '25%'}, 200, 'linear');
 		$storiesGrid.empty()/*.animate({height: '75%'})*/;
+		$storiesGrid.append('<img class="loading-gif" src="./images/ajax-loader.gif" alt="loading"/>');
 
 		var apiLink = "https://aptimes.com/svc/topstories/v2/";
 		
@@ -29,6 +30,8 @@ $(function(){
 			var storiesGridItem = '';
 			var storiesFetched = 0;
 			var response = $.parseJSON(data);
+
+			$storiesGrid.empty();
 
 			$.each(data.results, function(i, val){
 
@@ -43,10 +46,11 @@ $(function(){
 				}
 			});
 		}).fail(function(){
-			$storiesGrid.animate({width: '50vw', height: '25vh'});
+			$storiesGrid.empty();
+		/*	$storiesGrid.animate({width: '50vw', height: '25vh'});*/
 			$storiesGrid.append('<div class="error-message"><p>Something went wrong. Please try again later</p></div>');
 		}).always(function(){
-			$storiesGrid.append('<img class="loading-gif" src="./images/ajax-loader.gif" alt="loading"/>');
+
 		});
 
 	});
