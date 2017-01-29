@@ -92,6 +92,21 @@ html {
       justify-content: center;
   -ms-flex: 1;
       flex: 1; }
+  .content .dash-to-top {
+    height: auto;
+    max-width: 500px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0; }
+    @media all and (min-width: 600px) {
+      .content .dash-to-top {
+        padding-left: 7rem;
+        padding-bottom: 3rem; } }
+    @media all and (min-width: 1000px) {
+      .content .dash-to-top {
+        padding-left: 6rem; } }
   .content .dashboard {
     height: 100%;
     width: 100%;
@@ -110,16 +125,30 @@ html {
     @media all and (min-width: 600px) {
       .content .dashboard {
         -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap; } }
+            flex-flow: row nowrap;
+        -ms-flex-pack: start;
+            justify-content: flex-start; } }
     @media all and (min-width: 1000px) {
       .content .dashboard {
-        /* justify-content: flex-start; */ } }
+        padding: 1rem 1rem; } }
     .content .dashboard .times-logo-container {
       width: 300px;
       text-align: center; }
+      @media all and (min-width: 600px) {
+        .content .dashboard .times-logo-container {
+          margin-right: 3rem; } }
       .content .dashboard .times-logo-container .times-logo {
         height: auto;
         max-width: 100%; }
+    .content .dashboard .resize-logo {
+      width: 100px; }
+      @media all and (min-width: 600px) {
+        .content .dashboard .resize-logo {
+          width: 70px;
+          margin-right: 5rem; } }
+      @media all and (min-width: 1000px) {
+        .content .dashboard .resize-logo {
+          margin-right: 4rem; } }
     .content .dashboard form {
       margin-top: 2rem;
       display: -ms-flexbox;
@@ -129,6 +158,9 @@ html {
       -ms-flex-align: center;
           align-items: center;
       text-align: center; }
+      @media all and (min-width: 600px) {
+        .content .dashboard form {
+          margin-top: 0; } }
       .content .dashboard form label select {
         display: block;
         margin: 1rem; }

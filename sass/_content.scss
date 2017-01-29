@@ -1,9 +1,27 @@
+//Dashboard styles
+
 .content {
 	height: 100%;
 	display: flex;
     flex-flow: column nowrap;
     justify-content: center;
 	flex: 1;
+	.dash-to-top {
+		height: auto;
+		max-width: 500px;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include media($tablet-width) {
+			padding-left: 7rem;
+			padding-bottom: 3rem;
+		}
+		@include media($desktop-width) {
+			padding-left: 6rem;
+		}
+	}
 	.dashboard {
 		height: 100%;
 		width: 100%;
@@ -16,16 +34,30 @@
 		align-content: center;
 		@include media ($tablet-width){
 			flex-flow: row nowrap;
+			justify-content: flex-start;
 		}
 		@include media($desktop-width) {
-			/* justify-content: flex-start; */
+			padding: 1rem 1rem;
 		}
 		.times-logo-container {
 			width: 300px;
 			text-align: center;
+			@include media($tablet-width) {
+				margin-right: 3rem;
+			}
 			.times-logo {
 				height: auto;
 				max-width: 100%;
+			}
+		}
+		.resize-logo {
+			width: 100px;
+			@include media($tablet-width) {
+				width: 70px;
+				margin-right: 5rem;
+			}
+			@include media($desktop-width) {
+				margin-right: 4rem;
 			}
 		}
 		& form {
@@ -34,6 +66,9 @@
 			flex-flow: column nowrap;
 			align-items: center;
 			text-align: center;
+			@include media($tablet-width) {
+				margin-top: 0;
+			}
 			label {
 				select {
 					display: block;
@@ -42,6 +77,9 @@
 			}
 		}
 	}
+
+//Stories grid styles
+
 	.stories-grid {
 		height: auto;
 		display: flex;

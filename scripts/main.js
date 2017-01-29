@@ -9,22 +9,15 @@ $(function(){
 
 	$target.change(function() {
 		$selectedTopic = $( 'select option:selected' ).val();
-
-//Shrink dashboard and move it to top of page
-		var currHeight = $dashboard.height();
-		var autoHeight = $dashboard.css('height', 'auto').height();
-		$dashboard.height(currHeight).animate({height: autoHeight, position: 'absolute', top: 0, left: 0}, 100, 'linear');
-
-		$logoContainer.animate({width: '20vh'}, 100, 'linear');
-		/*$dashboard.animate({position: 'absolute', height: 'auto','max-width': '700px', top: 0,left: 0}, 200, 'linear');*/
-		//$logo.animate({width:'25%', height: '25%'}, 200, 'linear');
-		$storiesGrid.empty()/*.animate({height: '75%'})*/;
-		$storiesGrid.append('<img class="loading-gif" src="./images/ajax-loader.gif" alt="loading"/>');
-
 		var apiLink = "https://api.nytimes.com/svc/topstories/v2/";
 
-		console.log(apiLink);
-		
+//Shrink dashboard and move it to top of page (and append loading spinner gif)
+
+		$dashboard.addClass('dash-to-top');
+		$storiesGrid.empty().append('<img class="loading-gif" src="./images/ajax-loader.gif" alt="loading"/>');
+
+//Make ajax request to get stories
+
 		$.ajax({
 			url: apiLink += $selectedTopic + '.json' + '?' + $.param({'api-key': '4bd2bd098b3449068be47890b4f42e24'}),
 			method: 'GET' 
@@ -32,7 +25,10 @@ $(function(){
 			var storiesGridItem = '';
 			var storiesFetched = 0;
 
+			$logoContainer.addClass('resize-logo');
 			$storiesGrid.empty();
+
+//Loop over stories array ('results') and append first 12 stories which have associated images
 
 			$.each(data.results, function(i, val){
 
@@ -47,12 +43,10 @@ $(function(){
 				}
 			});
 		}).fail(function(){
-			$storiesGrid.empty();
-		/*	$storiesGrid.animate({width: '50vw', height: '25vh'});*/
-			$storiesGrid.append('<div class="error-message"><p>Something went wrong. Please try again later</p></div>');
-		}).always(function(){
 
+//Delete loading gif and append div with error message if ajax request fails
+
+			$storiesGrid.empty().append('<div class="error-message"><p>Something went wrong. Please try again later</p></div>');
 		});
-
 	});
 });
