@@ -7,22 +7,6 @@
     flex-flow: column nowrap;
     justify-content: center;
 	flex: 1;
-	.dash-to-top {
-		height: auto;
-		max-width: 500px;
-		padding-top: 2rem;
-		padding-bottom: 2rem;
-		position: absolute;
-		top: 0;
-		left: 0;
-		@include media($tablet-width) {
-			padding-left: 7rem;
-			padding-bottom: 3rem;
-		}
-		@include media($desktop-width) {
-			padding-left: 6rem;
-		}
-	}
 	.dashboard {
 		height: 100%;
 		width: 100%;
@@ -39,7 +23,7 @@
 			justify-content: flex-start;
 		}
 		@include media($desktop-width) {
-			padding: 1rem 1rem;
+			padding: 2rem;
 		}
 		.times-logo-container {
 			width: 300px;
@@ -85,6 +69,21 @@
     				}
 				}
 			}
+		}
+	}
+	.dash-to-top {
+		height: auto;
+		max-width: 500px;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		top: 0;
+		left: 0;
+		@include media($tablet-width) {
+			padding-left: 7rem;
+			padding-bottom: 3rem;
+		}
+		@include media($desktop-width) {
+			padding: 2rem;
 		}
 	}
 
