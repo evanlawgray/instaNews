@@ -129,14 +129,11 @@ html {
         height: auto;
         max-width: 100%; }
     .content .dashboard .resize-logo {
-      width: 100px; }
+      width: 25%; }
       @media all and (min-width: 600px) {
         .content .dashboard .resize-logo {
           width: 70px;
           margin-right: 5rem; } }
-      @media all and (min-width: 1000px) {
-        .content .dashboard .resize-logo {
-          margin-right: 4rem; } }
     .content .dashboard form {
       margin-top: 2rem;
       font-size: 1rem;
@@ -149,7 +146,8 @@ html {
       text-align: center; }
       @media all and (min-width: 600px) {
         .content .dashboard form {
-          margin-top: 0; } }
+          margin-top: 0;
+          padding-bottom: 0.5rem; } }
       .content .dashboard form label select {
         width: 130px;
         height: 30px;
@@ -167,8 +165,7 @@ html {
     left: 0; }
     @media all and (min-width: 600px) {
       .content .dash-to-top {
-        padding-left: 7rem;
-        padding-bottom: 3rem; } }
+        padding-left: 7rem; } }
     @media all and (min-width: 1000px) {
       .content .dash-to-top {
         padding: 2rem; } }
