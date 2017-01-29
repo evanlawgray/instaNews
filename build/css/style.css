@@ -84,6 +84,7 @@ html {
 
 .content {
   height: 100%;
+  width: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: column nowrap;
@@ -166,6 +167,7 @@ html {
         margin: 1rem; }
   .content .stories-grid {
     height: auto;
+    width: 100%;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-flow: row wrap;
@@ -230,11 +232,18 @@ html {
         -ms-flex-pack: end;
             justify-content: flex-end; }
         .content .stories-grid .story a .story-abstract, .content .stories-grid .story a:hover .story-abstract, .content .stories-grid .story a:visited .story-abstract, .content .stories-grid .story a:link .story-abstract, .content .stories-grid .story a:active .story-abstract {
+          height: 0;
+          overflow: hidden;
+          position: relative;
+          right: 0;
           font-size: 1rem;
           font-weight: 100;
           background-color: rgba(0, 0, 0, 0.65);
-          padding: 0.7rem;
-          line-height: 1.5rem; }
+          line-height: 1.5rem;
+          transition: all 0.05s linear; }
+      .content .stories-grid .story a:hover .story-abstract {
+        height: auto;
+        padding: 0.7rem; }
 
 footer {
   height: 80px;
