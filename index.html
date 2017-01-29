@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>  Instanews  </title>
 	<meta name="viewport" content="width=device-width", initial-scale="1">
+	<link rel="stylesheet" href="build/css/selectric.css">
 	<link rel="stylesheet" type="text/css" href="/build/css/style.min.css">
 </head>
 <body>
@@ -15,11 +16,11 @@
 			<form action="#" method="">
 				<label> Choose a Section:
 					<select id="target">
-						<option value="sections" selected="selected">  Sections...  </option>
-						<option value="politics">  Politics  </option>
-						<option value="business">  Business  </option>
-						<option value="sports"> Sports  </option>
-						<option value="arts & leisure">  Arts &amp; leisure  </option>
+						<option value="sections" selected="selected">Sections...</option>
+						<option value="politics">Politics</option>
+						<option value="business">Business</option>
+						<option value="sports">Sports</option>
+						<option value="arts & leisure">Arts &amp; Leisure</option>
 					</select>
 				</label>	
 			</form>
@@ -30,6 +31,12 @@
 	</div>
 	<footer><p>&#9400;Copyright 2016 INSTANEWS</p></footer>
 	<script type="text/javascript" src="library/jquery-3.1.0.js"></script>
+	<script src="build/js/jquery.selectric.min.js"></script>
+	<script>
+		$(function() {
+  			$('select').selectric();
+		});
+	</script>
 	<script type="text/javascript" src="build/js/main.min.js"></script>
 </body>
 </html>
