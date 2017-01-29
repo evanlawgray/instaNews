@@ -44,7 +44,7 @@
 		.times-logo-container {
 			width: 300px;
 			text-align: center;
-			transition: all 0.1s linear;
+			transition: all 0.05s linear;
 			@include media($tablet-width) {
 				margin-right: 3rem;
 			}
@@ -65,6 +65,7 @@
 		}
 		& form {
 			margin-top: 2rem;
+			font-size: 1rem;
 			display: flex;
 			flex-flow: column nowrap;
 			align-items: center;
@@ -74,8 +75,14 @@
 			}
 			label {
 				select {
-					display: block;
-					margin: 1rem;
+					width: 130px;
+    				height: 30px;
+    				margin: 1rem 0 0;
+    				font-size: 1.15rem;
+    				display: block;
+    				&:focus {
+    					outline: none;
+    				}
 				}
 			}
 		}
