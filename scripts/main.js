@@ -21,7 +21,9 @@ $(function(){
 		$storiesGrid.empty()/*.animate({height: '75%'})*/;
 		$storiesGrid.append('<img class="loading-gif" src="./images/ajax-loader.gif" alt="loading"/>');
 
-		var apiLink = "https://aptimes.com/svc/topstories/v2/";
+		var apiLink = "https://api.nytimes.com/svc/topstories/v2/";
+
+		console.log(apiLink);
 		
 		$.ajax({
 			url: apiLink += $selectedTopic + '.json' + '?' + $.param({'api-key': '4bd2bd098b3449068be47890b4f42e24'}),
@@ -29,7 +31,6 @@ $(function(){
 		}).done(function(data){
 			var storiesGridItem = '';
 			var storiesFetched = 0;
-			var response = $.parseJSON(data);
 
 			$storiesGrid.empty();
 
