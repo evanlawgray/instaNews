@@ -127,7 +127,7 @@
 			@include media ($desktop-width) {
 				width: 25%;
 			}
-			.story-image-link {
+			a, a:hover, a:visited, a:link, a:active {
 				height: 100%;
 				width: 100%;
 				color: #FFFFFF;

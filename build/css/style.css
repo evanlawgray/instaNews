@@ -218,7 +218,7 @@ html {
       @media all and (min-width: 1000px) {
         .content .stories-grid .story {
           width: 25%; } }
-      .content .stories-grid .story .story-image-link {
+      .content .stories-grid .story a, .content .stories-grid .story a:hover, .content .stories-grid .story a:visited, .content .stories-grid .story a:link, .content .stories-grid .story a:active {
         height: 100%;
         width: 100%;
         color: #FFFFFF;
@@ -229,7 +229,7 @@ html {
             flex-flow: column nowrap;
         -ms-flex-pack: end;
             justify-content: flex-end; }
-        .content .stories-grid .story .story-image-link .story-abstract {
+        .content .stories-grid .story a .story-abstract, .content .stories-grid .story a:hover .story-abstract, .content .stories-grid .story a:visited .story-abstract, .content .stories-grid .story a:link .story-abstract, .content .stories-grid .story a:active .story-abstract {
           font-size: 1rem;
           font-weight: 100;
           background-color: rgba(0, 0, 0, 0.65);
