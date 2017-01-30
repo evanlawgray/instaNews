@@ -28,11 +28,16 @@ $(function(){
 
 			$storiesGrid.empty();
 
-//Loop over stories array ('results') and append first 12 stories which have associated images
+//Filter stories array (data.results) to get first 12 stories with images
 
-			$.each(data.results, function(i, val){
+			var filteredStoriesArray = data.results.filter(function(story){
+				return story.multimedia.length !== 0;
+			}).slice('0', '12');
 
-				if (storiesFetched < 12 && val.multimedia.length !== 0) {
+			console.log(filteredStoriesArray);
+
+			$.each(filteredStoriesArray, function(i, val){
+
 					storiesGridItem = '';
 
 					storiesGridItem += '<li class="story" style="background-image: url(\'' + val.multimedia[4].url + '\');">';
@@ -40,7 +45,6 @@ $(function(){
 					storiesGridItem += '<p class="story-abstract">' + val.abstract + '</p> </a>' + '</li>';
 					$storiesGrid.append(storiesGridItem);
 					storiesFetched++;
-				}
 			});
 		}).fail(function(){
 
