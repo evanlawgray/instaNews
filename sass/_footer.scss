@@ -1,19 +1,20 @@
 footer {
-	height: 80px;
+	height: 75px;
+	width: 100%;
 	padding-top: 2rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 		@include media(1000px) {
 			justify-content: flex-start;
-			margin-left: 2%;
+			padding-left: 4rem;
 		}
 		p {
 			height: 100%;
 			color: #C2C2C2;
 			font-size: 14px;
 				@include media(1000px) {
-				font-size: 1rem;
+				font-size: 0.9rem;
 				}
 		}
 }

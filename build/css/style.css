@@ -258,7 +258,8 @@ html {
         padding: 0.7rem; }
 
 footer {
-  height: 80px;
+  height: 75px;
+  width: 100%;
   padding-top: 2rem;
   display: -ms-flexbox;
   display: flex;
@@ -270,11 +271,11 @@ footer {
     footer {
       -ms-flex-pack: start;
           justify-content: flex-start;
-      margin-left: 2%; } }
+      padding-left: 4rem; } }
   footer p {
     height: 100%;
     color: #C2C2C2;
     font-size: 14px; }
     @media all and (min-width: 1000px) {
       footer p {
-        font-size: 1rem; } }
+        font-size: 0.9rem; } }
