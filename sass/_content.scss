@@ -29,7 +29,7 @@
 			width: 300px;
 			text-align: center;
 			margin-bottom: 1.5rem;
-			transition: all 0.05s linear;
+			transition: margin-right 1s linear 0.5s, margin-bottom 1s linear 0.5s;
 			@include media($tablet-width) {
 				margin-bottom: 0;
 				margin-right: 3rem;
@@ -41,9 +41,11 @@
 		}
 		.resize-logo {
 			width: 25%;
+			transition: margin-right 1s linear 0.5s, margin-bottom 1s linear 0.5s;
 			@include media($tablet-width) {
 				width: 70px;
 				margin-right: 5rem;
+				margin-bottom: 0;
 			}
 		}
 		& form {
