@@ -15,7 +15,7 @@ $(function(){
 
 		$dashboard.addClass('dash-to-top');
 		$logoContainer.addClass('resize-logo');
-		$storiesGrid.empty().append('<img class="loading-gif" src="..images/ajax-loader.gif" alt="loading"/>');
+		$storiesGrid.empty().append('<img class="loading-gif" src="../images/ajax-loader.gif" alt="loading"/>');
 
 //Make ajax request to get stories
 
