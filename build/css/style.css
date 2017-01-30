@@ -119,13 +119,13 @@ html {
       .content .dashboard {
         padding: 2rem; } }
     .content .dashboard .times-logo-container {
-      width: 30%;
-      min-width: 300px;
+      width: 50%;
       max-width: 300px;
+      min-width: 200px;
       text-align: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       margin-right: 0;
-      transition: margin-right 0.5s linear, margin-bottom 0.5s linear 0.25s; }
+      transition: margin-right 0.25s linear, margin-bottom 0.5s linear 0.25s; }
       @media all and (min-width: 600px) {
         .content .dashboard .times-logo-container {
           min-width: 150px;
@@ -135,16 +135,14 @@ html {
         height: auto;
         max-width: 100%; }
     .content .dashboard .resize-logo {
-      width: 25%;
-      transition: margin-right 0.5s linear 0.25s, margin-bottom 0.5s linear 0.25s; }
+      transition: margin-right 0.25s linear, margin-bottom 0.5s linear 0.25s; }
       @media all and (min-width: 600px) {
         .content .dashboard .resize-logo {
-          width: 70px;
+          width: 75px;
+          min-width: 75px;
           margin-right: 5rem;
           margin-bottom: 0; } }
     .content .dashboard form {
-      margin-top: 2rem;
-      font-size: 1rem;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-flow: column nowrap;
@@ -156,14 +154,16 @@ html {
         .content .dashboard form {
           margin-top: 0;
           padding-bottom: 0.5rem; } }
-      .content .dashboard form label select {
-        width: 130px;
-        height: 30px;
-        margin: 1rem 0 0;
-        font-size: 1.15rem;
-        display: block; }
-        .content .dashboard form label select:focus {
-          outline: none; }
+      .content .dashboard form label {
+        font-size: 0.8rem; }
+        .content .dashboard form label select {
+          width: 130px;
+          height: 30px;
+          margin: 1rem 0 0;
+          font-size: 1.15rem;
+          display: block; }
+          .content .dashboard form label select:focus {
+            outline: none; }
   .content .dash-to-top {
     height: auto;
     max-width: 500px;
