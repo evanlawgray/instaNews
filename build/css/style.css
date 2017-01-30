@@ -140,7 +140,7 @@ html {
       text-align: center;
       margin-bottom: 1rem;
       margin-right: 0;
-      transition: margin-right 0.25s linear, margin-bottom 0.5s linear 0.25s; }
+      transition: margin-right 0.5s ease 0.25s, margin-bottom 0.5s ease 0.25s; }
       @media all and (min-width: 600px) {
         .content .dashboard .times-logo-container {
           min-width: 150px;
@@ -150,7 +150,7 @@ html {
         height: auto;
         max-width: 100%; }
     .content .dashboard .resize-logo {
-      transition: margin-right 0.25s linear, margin-bottom 0.5s linear 0.25s; }
+      transition: margin-right 0.5s ease, margin-bottom 0.5s ease 0.25s; }
       @media all and (min-width: 600px) {
         .content .dashboard .resize-logo {
           width: 75px;
