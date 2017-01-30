@@ -9,7 +9,7 @@ $(function(){
 
 	$target.change(function() {
 		$selectedTopic = $( 'select option:selected' ).val();
-		var apiLink = "https://api.nytimes.com/svc/topstories/v2/";
+		var apiLink = 'https://api.nytimes.com/svc/topstories/v2/';
 
 //Shrink dashboard and move it to top of page (and append loading spinner gif)
 
@@ -24,7 +24,7 @@ $(function(){
 			method: 'GET' 
 		}).done(function(data){
 			var storiesGridItem = '';
-			var storiesFetched = 0;
+		/*	var storiesFetched = 0;*/
 
 			$storiesGrid.empty();
 
@@ -44,7 +44,7 @@ $(function(){
 					storiesGridItem += '<a href="' + val.url + '">';
 					storiesGridItem += '<p class="story-abstract">' + val.abstract + '</p> </a>' + '</li>';
 					$storiesGrid.append(storiesGridItem);
-					storiesFetched++;
+				/*	storiesFetched++;*/
 			});
 		}).fail(function(){
 

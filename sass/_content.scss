@@ -28,8 +28,10 @@
 		.times-logo-container {
 			width: 300px;
 			text-align: center;
+			margin-bottom: 1.5rem;
 			transition: all 0.05s linear;
 			@include media($tablet-width) {
+				margin-bottom: 0;
 				margin-right: 3rem;
 			}
 			.times-logo {
