@@ -156,14 +156,6 @@ html {
           padding-bottom: 0.5rem; } }
       .content .dashboard form label {
         font-size: 0.8rem; }
-        .content .dashboard form label select {
-          width: 130px;
-          height: 30px;
-          margin: 1rem 0 0;
-          font-size: 1.15rem;
-          display: block; }
-          .content .dashboard form label select:focus {
-            outline: none; }
   .content .dash-to-top {
     height: auto;
     max-width: 500px;
