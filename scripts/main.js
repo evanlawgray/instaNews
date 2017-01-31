@@ -37,7 +37,7 @@ $(function(){
 				return story.multimedia.length !== 0;
 			}).slice('0', '12');
 
-			$('.animation-slider').animate({height: '0px'}, 900, 'swing');
+			$('.animation-slider').animate({height: '0px'}, 900, 'linear');
 
 			$.each(filteredStoriesArray, function(i, val){
 
