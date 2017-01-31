@@ -1,12 +1,12 @@
 $(function(){
 
 	$('.animation-slider').hide();
+	var $animationSlider = $('.animation-slider');
 
 	var $target = $('#target');
 	var $storiesGrid = $('.stories-grid');
 	var $dashboard = $('.dashboard');
 	var $logoContainer = $('.times-logo-container');
-	var $logo = $( '.times-logo' );
 	var $selectedTopic = '';
 
 	$target.change(function() {
@@ -16,9 +16,9 @@ $(function(){
 //Shrink dashboard and move it to top of page (and append loading spinner gif)
 		
 		$dashboard.addClass('dash-to-top');
-		$('.animation-slider').show();
+		$animationSlider.show();
 		$logoContainer.addClass('resize-logo');
-		$storiesGrid.empty().append('<img class="loading-gif" src="../images/ajax-loader.gif" alt="loading"/>');
+		$storiesGrid.empty().append('<img class="loading-gif" src="./images/ajax-loader.gif" alt="loading"/>');
 
 //Make ajax request to get stories
 
@@ -37,7 +37,7 @@ $(function(){
 				return story.multimedia.length !== 0;
 			}).slice('0', '12');
 
-			$('.animation-slider').animate({height: '0px'}, 900, 'linear');
+			$animationSlider.animate({height: '0px'}, 900, 'linear');
 
 			$.each(filteredStoriesArray, function(i, val){
 
