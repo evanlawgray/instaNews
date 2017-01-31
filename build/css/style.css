@@ -123,7 +123,7 @@ html {
         align-items: center;
     -ms-flex-line-pack: center;
         align-content: center;
-    transition: all 0.1s linear; }
+    transition: all 0.75s linear 0.25s; }
     @media all and (min-width: 600px) {
       .content .dashboard {
         -ms-flex-flow: row nowrap;
