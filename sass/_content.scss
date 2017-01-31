@@ -8,7 +8,7 @@
     justify-content: center;
 	flex: 1;
 	.dashboard {
-		height: 100%;
+		height: 90vh;
 		width: 100%;
 		margin: 0;
 		position: relative;
@@ -16,7 +16,6 @@
 		flex-flow: column nowrap;
 		justify-content: center;
 		align-items: center;
-		align-content: center;
 		transition: all 0.75s linear 0.25s;
 		@include media ($tablet-width){
 			flex-flow: row nowrap;
