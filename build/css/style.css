@@ -184,6 +184,8 @@ html {
     @media all and (min-width: 1000px) {
       .content .dash-to-top {
         padding: 2rem; } }
+  .content .animation-slider {
+    height: 90vh; }
   .content .stories-grid {
     height: auto;
     width: 100%;

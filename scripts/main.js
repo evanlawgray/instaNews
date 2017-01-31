@@ -1,5 +1,7 @@
 $(function(){
 
+	$('.animation-slider').hide();
+
 	var $target = $('#target');
 	var $storiesGrid = $('.stories-grid');
 	var $dashboard = $('.dashboard');
@@ -12,8 +14,9 @@ $(function(){
 		var apiLink = 'https://api.nytimes.com/svc/topstories/v2/';
 
 //Shrink dashboard and move it to top of page (and append loading spinner gif)
-
+		
 		$dashboard.addClass('dash-to-top');
+		$('.animation-slider').show();
 		$logoContainer.addClass('resize-logo');
 		$storiesGrid.empty().append('<img class="loading-gif" src="../images/ajax-loader.gif" alt="loading"/>');
 
@@ -34,7 +37,7 @@ $(function(){
 				return story.multimedia.length !== 0;
 			}).slice('0', '12');
 
-			console.log(filteredStoriesArray);
+			$('.animation-slider').animate({height: '0px'}, 900, 'swing');
 
 			$.each(filteredStoriesArray, function(i, val){
 
