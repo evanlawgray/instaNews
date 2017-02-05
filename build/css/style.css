@@ -135,7 +135,6 @@ html {
       width: 50%;
       max-width: 300px;
       min-width: 200px;
-      text-align: center;
       margin-bottom: 1rem;
       margin-right: 0;
       transition: margin-right 0.25s ease 0.25s, margin-bottom 0.5s ease 0.25s; }
@@ -162,7 +161,7 @@ html {
           flex-flow: column nowrap;
       -ms-flex-align: center;
           align-items: center;
-      text-align: center; }
+      text-align: left; }
       @media all and (min-width: 600px) {
         .content .dashboard form {
           margin-top: 0;

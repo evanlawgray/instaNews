@@ -28,7 +28,6 @@
 			width: 50%;
 			max-width: 300px;
 			min-width: 200px;
-			text-align: center;
 			margin-bottom: 1rem;
 			margin-right: 0;
 			transition: margin-right 0.25s ease 0.25s, margin-bottom 0.5s ease 0.25s;
@@ -55,7 +54,7 @@
 			display: flex;
 			flex-flow: column nowrap;
 			align-items: center;
-			text-align: center;
+			text-align: left;
 			@include media($tablet-width) {
 				margin-top: 0;
 				padding-bottom: 0.5rem;
