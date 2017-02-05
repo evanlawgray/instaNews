@@ -37,8 +37,9 @@ $(function(){
 				return story.multimedia.length !== 0;
 			}).slice('0', '12');
 
-			$animationSlider.animate({height: '0px'}, 900, 'linear');
+			$animationSlider.animate({height: '0px'}, 400, 'swing');
 
+	/*		$animationSlider.slideToggle();*/
 			$.each(filteredStoriesArray, function(i, val){
 
 					storiesGridItem = '';
