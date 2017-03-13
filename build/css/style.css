@@ -108,6 +108,13 @@ html {
       justify-content: center;
   -ms-flex: 1;
       flex: 1; }
+  .content .screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    width: 1px;
+    margin: 0;
+    position: absolute !important;
+    overflow: hidden; }
   .content .dashboard {
     height: 90vh;
     width: 100%;
@@ -197,7 +204,7 @@ html {
       height: 40px;
       margin: 0 auto; }
     .content .stories-grid .error-message {
-      height: 40vh;
+      height: 50vh;
       width: 75vw;
       border: 1px outset white;
       color: #FFFFFF;

@@ -1,162 +1,203 @@
 //****** Dashboard styles ******\\
 
 .content {
-	height: 100%;
-	width: 100%;
-	display: flex;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  flex: 1;
+
+  .screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    width: 1px;
+    margin: 0;
+    position: absolute !important;
+    overflow: hidden;
+  }
+
+  .dashboard {
+    height: 90vh;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-	flex: 1;
-	.dashboard {
-		height: 90vh;
-		width: 100%;
-		margin: 0;
-		position: relative;
-		display: flex;
-		flex-flow: column nowrap;
-		justify-content: center;
-		align-items: center;
-		transition: all 0.75s linear 0.25s;
-		@include media ($tablet-width){
-			flex-flow: row nowrap;
-			justify-content: flex-start;
-		}
-		@include media($desktop-width) {
-			padding: 2rem;
-		}
-		.times-logo-container {
-			width: 50%;
-			max-width: 300px;
-			min-width: 200px;
-			margin-bottom: 1rem;
-			margin-right: 0;
-			transition: margin-right 0.25s ease 0.25s, margin-bottom 0.5s ease 0.25s;
-			@include media($tablet-width) {
-				min-width: 150px;
-				margin-bottom: 0;
-				margin-right: 3rem;
-			}
-			.times-logo {
-				height: auto;
-				max-width: 100%;
-			}
-		}
-		.resize-logo {
-			transition: margin-right 0.25s ease, margin-bottom 0.5s ease 0.25s;
-			@include media($tablet-width) {
-				width: 75px;
-				min-width: 75px;
-				margin-right: 5rem;
-				margin-bottom: 0;
-			}
-		}
-		& form {
-			display: flex;
-			flex-flow: column nowrap;
-			align-items: center;
-			text-align: left;
-			@include media($tablet-width) {
-				margin-top: 0;
-				padding-bottom: 0.5rem;
-			}
-			label {
-				font-size: 0.8rem;
-			}
-		}
-	}
-	.dash-to-top {
-		height: auto;
-		max-width: 500px;
-		padding-top: 2rem;
-		padding-bottom: 2rem;
-		top: 0;
-		left: 0;
-		@include media($tablet-width) {
-			padding-left: 7rem;
-		}
-		@include media($desktop-width) {
-			padding: 2rem;
-		}
-	}
+    align-items: center;
+    transition: all 0.75s linear 0.25s;
 
-	.animation-slider {
-		height: 90vh;
-	}
+    @include media($tablet-width) {
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+    }
 
-//****** Stories grid styles ******\\
 
-	.stories-grid {
-		height: auto;
-		width: 100%;
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: center;
-		.loading-gif {
-			width: 40px;
-			height: 40px;
-			margin: 0 auto;
-		}
-		.error-message {
-			height: 50vh;
-			width: 75vw;
-			border: 1px outset white;
-			color: #FFFFFF;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			@include media($tablet-width) {
-				height: 35vh;
-				width: 55vw;
-			}
-			& p {
-				text-align: center;
-    			max-width: 320px;
-    			font-size: 1.5rem;
-    			font-style: italic;
-   				line-height: 2.5rem;
-			}
-		}
-		.story {
-		 	height: 420px;
-		 	width: 100%;
-		 	background-size: cover;
-		 	background-position: center;
-		 	background-repeat: no-repeat;
-			list-style-type: none;
-			display: flex;
-			flex-flow: column nowrap;
-			justify-content: flex-end;
-			align-items: center;
-			@include media ($tablet-width) {
-				width: 50%;
-			}
-			@include media ($desktop-width) {
-				width: 25%;
-			}
-			a, a:hover, a:visited, a:link, a:active {
-				height: 100%;
-				width: 100%;
-				color: #FFFFFF;
-				text-decoration: none;
-				display: flex;
-    			flex-flow: column nowrap;
-    			justify-content: flex-end;
-				.story-abstract {
-					height: 0;
-					overflow: hidden;
-					position: relative;
-					right: 0;
-					font-size: 1rem;
-					background-color: rgba(0, 0, 0, 0.65);
-					line-height: 1.5rem;
-					transition: all 0.1s linear;
-				}
-			}
-			a:hover .story-abstract {
-				height: auto;
-				padding: 0.7rem;
-			}
-		}
-	}
+    @include media($desktop-width) {
+      padding: 2rem;
+    }
+
+
+    .times-logo-container {
+      width: 50%;
+      max-width: 300px;
+      min-width: 200px;
+      margin-bottom: 1rem;
+      margin-right: 0;
+      transition: margin-right 0.25s ease 0.25s, margin-bottom 0.5s ease 0.25s;
+
+      @include media($tablet-width) {
+        min-width: 150px;
+        margin-bottom: 0;
+        margin-right: 3rem;
+      }
+
+
+      .times-logo {
+        height: auto;
+        max-width: 100%;
+      }
+    }
+
+    .resize-logo {
+      transition: margin-right 0.25s ease, margin-bottom 0.5s ease 0.25s;
+
+      @include media($tablet-width) {
+        width: 75px;
+        min-width: 75px;
+        margin-right: 5rem;
+        margin-bottom: 0;
+      }
+    }
+
+    & form {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      text-align: left;
+
+      @include media($tablet-width) {
+        margin-top: 0;
+        padding-bottom: 0.5rem;
+      }
+
+
+      label {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .dash-to-top {
+    height: auto;
+    max-width: 500px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    top: 0;
+    left: 0;
+
+    @include media($tablet-width) {
+      padding-left: 7rem;
+    }
+
+
+    @include media($desktop-width) {
+      padding: 2rem;
+    }
+  }
+
+  .animation-slider {
+    height: 90vh;
+  }
+
+  //****** Stories grid styles ******\\
+
+  .stories-grid {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    .loading-gif {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto;
+    }
+
+    .error-message {
+      height: 50vh;
+      width: 75vw;
+      border: 1px outset white;
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      @include media($tablet-width) {
+        height: 35vh;
+        width: 55vw;
+      }
+
+
+      & p {
+        text-align: center;
+        max-width: 320px;
+        font-size: 1.5rem;
+        font-style: italic;
+        line-height: 2.5rem;
+      }
+    }
+
+    .story {
+      height: 420px;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      list-style-type: none;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-end;
+      align-items: center;
+
+      @include media($tablet-width) {
+        width: 50%;
+      }
+
+
+      @include media($desktop-width) {
+        width: 25%;
+      }
+
+
+      a, a:hover, a:visited, a:link, a:active {
+        height: 100%;
+        width: 100%;
+        color: #FFFFFF;
+        text-decoration: none;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+
+        .story-abstract {
+          height: 0;
+          overflow: hidden;
+          position: relative;
+          right: 0;
+          font-size: 1rem;
+          background-color: rgba(0, 0, 0, 0.65);
+          line-height: 1.5rem;
+          transition: all 0.1s linear;
+        }
+      }
+
+      a:hover .story-abstract {
+        height: auto;
+        padding: 0.7rem;
+      }
+    }
+  }
 }

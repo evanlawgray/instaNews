@@ -1,45 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>  Instanews  </title>
-	<meta name="viewport" content="width=device-width", initial-scale="1">
-	<link rel="stylesheet" href="./build/css/selectric.css">
-	<link rel="stylesheet" type="text/css" href="./build/css/style.min.css">
-</head>
-<body>
-	<div class="content">
-		<section class="dashboard">
-				<div class="times-logo-container">
-					<img class="times-logo" src="images/nyt-logo.svg">
-				</div>
-			<form action="#" method="">
-				<label> Choose a Section:
-					<select id="target">
-						<option value="sections" selected="selected">Sections...</option>
-						<option value="politics">Politics</option>
-						<option value="business">Business</option>
-						<option value="world">World</option>
-						<option value="technology">Technology</option>
-						<option value="arts">Arts</option>
-						<option value="sports">Sports</option>
-					</select>
-				</label>	
-			</form>
-		</section>
-		<div class="animation-slider"></div>
-		<section class="stories-grid">
-			
-		</section>
-	</div>
-	<footer><p>&#9400;Copyright 2016 INSTANEWS</p></footer>
-	<script type="text/javascript" src="./library/jquery-3.1.0.js"></script>
-	<script src="./library/jquery.selectric.min.js"></script>
-	<script>
-		$(function() {
-  			$('select').selectric();
-		});
-	</script>
-	<script type="text/javascript" src="./build/js/main.min.js"></script>
-</body>
+	<head>
+		<meta charset="utf-8">
+		<title>  Instanews  </title>
+		<meta name="viewport" content="width=device-width" initial-scale="1">
+		<link rel="stylesheet" href="./build/css/selectric.css">
+		<link rel="stylesheet" type="text/css" href="./build/css/style.min.css">
+	</head>
+
+	<body>
+		<div class="content">
+			<section class="dashboard">
+
+					<h2 class="screen-reader-text">Navigation dashboard</h2>
+
+					<div class="times-logo-container">
+						<img class="times-logo" src="images/nyt-logo.svg" alt="The New York Times logo">
+					</div>
+
+				<form action="#" method="get">
+					<label> Choose a Section:
+						<select id="target">
+
+							<option value="sections" selected="selected">Sections...</option>
+							<option value="politics">Politics</option>
+							<option value="business">Business</option>
+							<option value="world">World</option>
+							<option value="technology">Technology</option>
+							<option value="arts">Arts</option>
+							<option value="sports">Sports</option>
+							
+						</select>
+					</label>	
+				</form>
+			</section>
+
+			<div class="animation-slider"></div>
+
+			<section class="stories-grid">
+
+				<h2 class="screen-reader-text">Stories</h2>	
+
+			</section>
+		</div>
+
+		<footer><p>&copy; Copyright 2016 INSTANEWS</p></footer>
+
+		<script type="text/javascript" src="./library/jquery-3.1.0.js"></script>
+		<script src="./library/jquery.selectric.min.js"></script>
+		<script>
+			$(function() {
+	  			$('select').selectric();
+			});
+		</script>
+		<script type="text/javascript" src="./build/js/main.min.js"></script>
+	</body>
 </html>
