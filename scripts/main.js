@@ -1,17 +1,17 @@
 $(function(){
 
 	$('.animation-slider').hide();
-	var $animationSlider = $('.animation-slider');
+	const $animationSlider = $('.animation-slider');
 
-	var $target = $('#target');
-	var $storiesGrid = $('.stories-grid');
-	var $dashboard = $('.dashboard');
-	var $logoContainer = $('.times-logo-container');
-	var $selectedTopic = '';
+	const $target = $('#target');
+	const $storiesGrid = $('.stories-grid');
+	const $dashboard = $('.dashboard');
+	const $logoContainer = $('.times-logo-container');
+	let $selectedTopic = '';
 
 	$target.change(function() {
 		$selectedTopic = $( 'select option:selected' ).val();
-		var apiLink = 'https://api.nytimes.com/svc/topstories/v2/';
+		let apiLink = 'https://api.nytimes.com/svc/topstories/v2/';
 
 //Make sure selected topic is valid
 
@@ -30,15 +30,27 @@ $(function(){
 			url: apiLink += $selectedTopic + '.json' + '?' + $.param({'api-key': '4bd2bd098b3449068be47890b4f42e24'}),
 			method: 'GET' 
 		}).done(function(data){
-			var storiesGridItem = '';
+			let storiesGridItem = '';
 
 			$storiesGrid.empty();
 
 //Filter stories array (data.results) to get first 12 stories with images
 
-			var filteredStoriesArray = data.results.filter(function(story){
+			// let filteredStoriesArray = data.results.filter(function(story){
+			// 	return story.multimedia.length !== 0;
+			// }).slice('0', '12');
+
+			let filteredStoriesArray;
+
+			filteredStoriesArray = data.results.filter(function(story){
 				return story.multimedia.length !== 0;
 			}).slice('0', '12');
+
+			if ( filteredStoriesArray.length < 12 ) {
+				filteredStoriesArray = data.results.filter(function(story){
+					return story.multimedia.length !== 0;
+				}).slice('0', '8');
+			}
 
 			$animationSlider.animate({height: '0px'}, 400, 'swing');
 
@@ -53,6 +65,8 @@ $(function(){
 
 			});
 		}).fail(function(){
+
+			$animationSlider.animate({height: '0px'}, 400, 'swing');
 
 //Delete loading gif and append div with error message if ajax request fails
 

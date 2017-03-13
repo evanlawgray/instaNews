@@ -7,7 +7,11 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
+    babel = require('gulp-babel'),
     cssnano = require('gulp-cssnano');
+
+const input = './scripts/*.js';
+const output = './scripts/transpiled';
 
 var plumberErrorHandler = {
   errorHandler: notify.onError({
@@ -15,6 +19,12 @@ var plumberErrorHandler = {
     message: 'Error: <%= error.message %>'
   })
 };
+
+gulp.task('babel', () => {
+    return gulp.src(input)
+        .pipe(babel())
+        .pipe(gulp.dest(output));
+});
 
 gulp.task('sass', function() {
    gulp.src('./sass/style.scss')
@@ -30,7 +40,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('scripts', ['lint'], function() {
-	gulp.src('./scripts/*.js')
+	gulp.src('./scripts/transpiled/main.js')
 		//.pipe(plumber(plumberErrorHandler))
 		.pipe(uglify())
 		.pipe(rename({extname: '.min.js' }))
@@ -38,7 +48,7 @@ gulp.task('scripts', ['lint'], function() {
 });
 
 gulp.task('lint', function(){
-	return gulp.src(['scripts/*.js'])
+	return gulp.src(['scripts/transpiled/main.js'])
 		.pipe(plumber(plumberErrorHandler))
 		.pipe(eslint())
 		.pipe(eslint.format())
@@ -55,11 +65,10 @@ gulp.task('browserSync', function(){
 	gulp.watch(['build/css/*.css', 'build/js/*.js', 'index.html']).on('change', browserSync.reload);
 });
 
-
-
 gulp.task('watch', function() {
-   gulp.watch('./scripts/*.js', ['scripts']);
-   gulp.watch('./sass/*.scss', ['sass']);
+  gulp.watch(input, ['babel']);
+  gulp.watch('./scripts/*.js', ['scripts']);
+  gulp.watch('./sass/*.scss', ['sass']);
 });
 
 gulp.task('default', ['watch', 'browserSync', 'lint']);
